@@ -76,6 +76,11 @@
       <artifactId>camunda-template-engines-freemarker</artifactId>
     </dependency>
 
+<dependency>
+  <groupId>org.camunda.bpm.extension</groupId>
+  <artifactId>camunda-bpm-mail-core</artifactId>
+  <version>1.1.0</version>
+</dependency>
     <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-jcl</artifactId>
@@ -110,6 +115,34 @@
       <version>3.0.1</version>
       <scope>provided</scope>
     </dependency>
+    
+    <!-- https://mvnrepository.com/artifact/com.microsoft.sqlserver/sqljdbc4 -->
+<dependency>
+    <groupId>com.microsoft.sqlserver</groupId>
+    <artifactId>sqljdbc4</artifactId>
+    <version>4.0</version>
+    <scope>test</scope>
+</dependency>
+
+    <dependency>
+      <groupId>org.camunda.bpm</groupId>
+      <artifactId>camunda-engine-plugin-connect</artifactId>
+      <scope>test</scope>
+    </dependency>
+   
+       
+
+    <dependency>
+      <groupId>org.camunda.bpm</groupId>
+      <artifactId>camunda-engine</artifactId>
+      <scope>provided</scope>
+    </dependency>
+  <dependency>
+      <groupId>org.camunda.template-engines</groupId>
+      <artifactId>camunda-template-engines-freemarker</artifactId>
+      <scope>provided</scope>
+    </dependency>    
+  
   </dependencies>
 
 </project>

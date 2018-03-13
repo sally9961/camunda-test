@@ -6,52 +6,14 @@
 
   <bean id="processEngineConfiguration" class="org.camunda.bpm.engine.impl.cfg.StandaloneInMemProcessEngineConfiguration">
 
-    <property name="jdbcUrl" value="jdbc:sqlserver://localhost:1433;databaseName=tutorialDb" />
-    <property name="jdbcDriver" value="org.h2.Driver" />
-    <property name="jdbcUsername" value="sa" />
-    <property name="jdbcPassword" value="Oboba!23" />
+    <property name="jobExecutorActivate" value="true" />
 
-    <!-- Database configurations -->
-    <property name="databaseSchemaUpdate" value="true" />
-
-    <!-- job executor configurations -->
-    <property name="jobExecutorActivate" value="false" />
-
-    <property name="history" value="full" />
-    
-    
-    <!-- mail server configurations -->
-    <property name="mailServerPort" value="${mail.server.port}" />
-    <property name="history" value="full" />
-
-    <property name="jdbcBatchProcessing" value="false"/>
-
-    <!-- <property name="customPostBPMNParseListeners">
-      <list>
-        <bean class="org.camunda.bpm.engine.impl.bpmn.parser.FoxFailedJobParseListener" />
-      </list>
-    </property> -->
-
-    <!-- <property name="failedJobCommandFactory" ref="foxFailedJobCommandFactory" /> -->
-
-    <!--<property name="idGenerator" ref="uuidGenerator" />-->
-
-    <!-- engine plugins -->
     <property name="processEnginePlugins">
       <list>
-        <ref bean="connectProcessEnginePlugin" />
-        <ref bean="spinProcessEnginePlugin" />
+        <bean class="org.camunda.connect.plugin.impl.ConnectProcessEnginePlugin" />
       </list>
     </property>
-
+    
   </bean>
-
-  <!-- <bean id="foxFailedJobCommandFactory" class="org.camunda.bpm.engine.impl.jobexecutor.FoxFailedJobCommandFactory" /> -->
-
-  <!--<bean id="uuidGenerator" class="org.camunda.bpm.engine.impl.persistence.StrongUuidGenerator" />-->
-
-  <!-- engine plugin beans -->
-  <bean id="connectProcessEnginePlugin" class="org.camunda.connect.plugin.impl.ConnectProcessEnginePlugin" />
-  <bean id="spinProcessEnginePlugin" class="org.camunda.spin.plugin.impl.SpinProcessEnginePlugin" />
-
+  
 </beans>
